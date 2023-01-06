@@ -18,10 +18,10 @@ import json
 
 
 async def main(token: str):
-    with open('google_admin_sdk_key.json') as f:
-        google_admin_sdk_key = json.load(f)
+    with open('key.json') as f:
+        key = json.load(f)
 
-    fcm_adapter = FCMAdapter(google_admin_sdk_key)
+    fcm_adapter = FCMAdapter(key)
 
     await fcm_adapter.send_message(
         {
@@ -35,7 +35,7 @@ async def main(token: str):
 
 ## FCMAdapter initialization
 ### Parameters
-- `google_admin_sdk_key: dict` - Google Admin SDK key. You can get it from the [Firebase Console](https://console.firebase.google.com/). Documentation [here](https://firebase.google.com/docs/admin/setup#initialize-sdk).
+- `key: dict` - Google key. You can get it from the [Firebase Console](https://console.firebase.google.com/). Documentation [here](https://firebase.google.com/docs/admin/setup#initialize-sdk).
 - `client: Union[httpx.AsyncClient, None] = None` - httpx.AsyncClient instance. If not provided, a new instance will be created.
 - `send_message_url: Union[str, None] = None` - FCM send message url. If not provided, the default value will be used.
 - `validate_only: bool = False` - Flag for testing the request without actually delivering the message. Works only with the `send_message` method.
