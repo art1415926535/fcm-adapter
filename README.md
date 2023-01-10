@@ -57,7 +57,7 @@ from fcm_adapter import FCMAdapter
 
 
 async def main(fcm_adapter: FCMAdapter, token: str):
-    response = await fcm_adapter.send_message(
+    response = await fcm_adapter.send(
         {
             "validate_only": False,
             "message": {
