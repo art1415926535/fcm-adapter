@@ -1,3 +1,3 @@
-from .adapter import GoogleAuthKey, FCMAdapter
+from .adapter import FCMAdapter, GoogleAuthKey
 
 __all__ = ["GoogleAuthKey", "FCMAdapter"]

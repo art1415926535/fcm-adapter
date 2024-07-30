@@ -2,10 +2,10 @@ import asyncio
 import datetime
 import json
 
-from tests.httpx_client import HttpClient
 import httpx
 
 from fcm_adapter import FCMAdapter, GoogleAuthKey
+from tests.httpx_client import HttpClient
 
 
 def test_fcm_adapter(key: GoogleAuthKey, send_message_url: str):

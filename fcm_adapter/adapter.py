@@ -4,7 +4,7 @@ from logging import getLogger
 from typing import TypedDict, Union
 
 import httpx
-from jose import jwt
+import jwt
 
 log = getLogger("fcm_adapter")
 
@@ -127,7 +127,7 @@ class FCMAdapter:
         refresh_token = jwt.encode(
             algorithm=algorithm,
             headers={"alg": algorithm, "typ": "JWT"},
-            claims={
+            payload={
                 "iss": self._key["client_email"],
                 "scope": "https://www.googleapis.com/auth/firebase.messaging",
                 "aud": self._key["token_uri"],
